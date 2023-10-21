@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.BG{
+  background-color: rgb(27, 33, 46);
+  height: 1120px;
+  width: 1920px;
+}
+.BG h3{
+  font-size: 25px;
+  color: rgb(100, 100, 100);
+}
+.BG h2{
+  font-size: 50px;
+  line-height: 1;
+  font-weight: 500;
+  color: rgb(241, 241, 241);
+}
+.BG h4{
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(100, 100, 100);
+}
+.BG a{
+  color: rgb(1, 113, 179);
+  text-decoration: none;
+}
+.BG input{
+  width:450px;
+  font-size: 15px;
+height: 50px;
+margin-top: 10px;
+padding: 20px;
+color: white;
+border: none;
+outline: none;
+border-radius: 20px;
+background-color: rgb(40, 47, 61);
+}
+.textbox{
+  width: 500px;
+}
+.BG select{
+  width:450px;
+  font-size: 15px;
+height: 50px;
+padding-left: 10px;
+color: white;
+border: none;
+margin-top: 10px;
+outline:rgb(1, 113, 179);
+border-radius: 20px;
+background-color: rgb(40, 47, 61);
+}
+.BG-OneSide{
+  margin-left: 100px;
+  padding-top: 400px;
+}
+.BG-OneSide .department{
+  margin-left: 7px;
+margin-top: 10px;
+}
+.BG button{
+  width:250px;
+  font-size: 18px;
+height: 50px;
+padding-left: 10px;
+color: white;
+border: 1px solid rgb(0, 58, 92);
+margin-top: 10px;
+border-radius: 20px;
+background-color: rgb(1, 113, 179);
+}
