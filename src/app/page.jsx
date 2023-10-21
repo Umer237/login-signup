@@ -23,6 +23,7 @@ const SignUp = () => {
  </div>
  </div>
 </div>
+<Login/>
  </>
   )
 }
