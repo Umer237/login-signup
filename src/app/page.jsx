@@ -1,6 +1,27 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 
 const SignUp = () => {
+
+  const [Email, setEmail]= useState("");
+  const [Password, setPassword]=useState("");
+  const [Department, setDepartment]=useState("");
+
+  const  saveData =async()=>{
+    if(Email== ""&& Password!="" && Department!=""){
+
+    let data= await fetch("http://localhost:3000/api/projects", {
+    method:"POST",
+    body:JSON.stringify({Email,Password,Department})});
+
+    data = await data.json();
+    }
+    else{
+      
+    }
+  }
+    
+
   return (
  <>
  <div className='BG'>
@@ -11,21 +32,21 @@ const SignUp = () => {
  
 <h4>Already A Member? <a href='/login'>Log in</a></h4>
 <div className='textbox'>
-<input placeholder='Enter your Email' type='email'></input>
-<input placeholder='Password' type='password'></input>
+  
+<input type='email' placeholder='Enter your Email' value={Email} onChange={(e)=>{setEmail(e.target.value)}}  required />
+<input placeholder='Password' value={Password} onChange={(e)=>{setPassword(e.target.value)}} type='password'></input>
 <h4 className='department'>Select Your Department</h4>
-<select>
+<select value={Department}  onChange={(e)=>{setDepartment(e.target.value)}}>
 <option></option>
     <option>Creative</option>
     <option>Admin</option>
 </select>
-<button>SUBMIT</button>
+
+<button onClick={saveData}>SUBMIT</button>
  </div>
  </div>
  </div>
 </div>
-{/* <Login/> */}
-
  </>
   )
 }
