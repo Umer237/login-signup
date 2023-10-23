@@ -8,6 +8,7 @@ const SignUp = () => {
     <div className="Signup-Flex">
  <h3>START FOR FREE</h3>
  <h2>Create new account.</h2>
+ 
 <h4>Already A Member? <a href='/login'>Log in</a></h4>
 <div className='textbox'>
 <input placeholder='Enter your Email' type='email'></input>
