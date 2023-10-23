@@ -8,17 +8,15 @@ const SignUp = () => {
   const [Department, setDepartment]=useState("");
 
   const  saveData =async()=>{
-    if(Email== ""&& Password!="" && Department!=""){
+    if(Email!= ""&& Password!="" && Department!=""){
 
     let data= await fetch("http://localhost:3000/api/projects", {
     method:"POST",
     body:JSON.stringify({Email,Password,Department})});
 
-    data = await data.json();
+    
     }
-    else{
-      
-    }
+    
   }
     
 
@@ -42,7 +40,7 @@ const SignUp = () => {
     <option>Admin</option>
 </select>
 
-<button onClick={saveData}>SUBMIT</button>
+<button onClick={saveData}><a href='/'>SUBMIT</a></button>
  </div>
  </div>
  </div>
