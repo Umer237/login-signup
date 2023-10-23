@@ -7,7 +7,10 @@ const SignUp = () => {
   const [Password, setPassword]=useState("");
   const [Department, setDepartment]=useState("");
 
-  const  saveData =async()=>{
+  
+  // this function will work upon onclick on submit button
+  const  saveData =async()=>
+  {
     if(Email!= ""&& Password!="" && Department!=""){
 
     let data= await fetch("http://localhost:3000/api/projects", {
