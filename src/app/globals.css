@@ -11,8 +11,9 @@
 
 .BG{
   background-color: rgb(27, 33, 46);
-  height: 1120px;
-  width: 1920px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .BG h3{
   font-size: 25px;
@@ -63,6 +64,7 @@ background-color: rgb(40, 47, 61);
 .BG-OneSide{
   margin-left: 100px;
   padding-top: 400px;
+  padding-bottom: 323px;
 }
 .BG-OneSide .department{
   margin-left: 7px;
