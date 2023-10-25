@@ -6,7 +6,8 @@ const SignUp = () => {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [Department, setDepartment] = useState("");
-
+  const [Message, setMessage] = useState("");
+  var [status, setStatus] = useState(false);
 
   // this function will work upon onclick on submit button
   const saveData = async () => {
@@ -16,28 +17,40 @@ const SignUp = () => {
     const jsondata = await fetchdata.json();
 
 
+
     if (Email != "" && Password != "" && Department != "") {
 
+      // this will run a loop to check these values and conditions
+
       jsondata.map((items) => {
+
         if (Email == items.Email) {
 
-          alert("User with this Email is Already Registered")
-          window.location.href = ("/");
+          setMessage("User with this Email is Already Registered")
+          setTimeout(() => { window.location.href = ("/") }, 2000)
 
         }
-      });
+        else if (Email != items.Email) {
 
-      let data = await fetch("http://localhost:3000/api/projects", {
-        method: "POST",
-        body: JSON.stringify({ Email, Password, Department })
-      });
-       window.location.href = ("/login");
-       alert("you are registered successfully")
-    
+          setStatus(true);
+
+        }
+      })
+      //  loop ends here
+
+      if (status == true) {
+        let data = await fetch("http://localhost:3000/api/projects", {
+          method: "POST",
+          body: JSON.stringify({ Email, Password, Department })
+        });
+
+        setMessage("you are registered successfully")
+        setTimeout(() => { window.location.href = ("/login"); }, 2000);
+      }
     }
 
     else {
-      alert("all fields are required")
+      setMessage("All Fields are Required")
     }
 
   }
@@ -52,7 +65,7 @@ const SignUp = () => {
             <h3>START FOR FREE</h3>
             <h2>Create new account.</h2>
 
-            <h4>Already A Member? <a href='/login'>Log in</a></h4>
+            <h4  >Already A Member? <a href='/login' style={{ color: 'white' }}>Log in</a></h4>
             <div className='textbox'>
 
               <input type='email' placeholder='Enter your Email' value={Email} onChange={(e) => { setEmail(e.target.value) }} required />
@@ -63,7 +76,9 @@ const SignUp = () => {
                 <option>Creative</option>
                 <option>Admin</option>
               </select>
-              <h4 style={{color:'red',marginLeft:'10px'}}>Error</h4>
+
+              <h4 style={{ color: 'red', marginLeft: '10px' }}>{Message}</h4>
+
               <button onClick={saveData}>SUBMIT</button>
             </div>
           </div>
