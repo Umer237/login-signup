@@ -55,7 +55,7 @@ const page = () => {
 
             <input type='email' value={Email} onChange={(e) => { setEmail(e.target.value) }} placeholder='Enter your Email' />
             <input placeholder='Enter your Password' value={Password} onChange={(e) => { setPassword(e.target.value) }} type='password'></input>
-
+<h4 style={{color:'red',marginLeft:'10px'}}>Error</h4>
             <button onClick={Success}>Login Now</button>
           </div>
         </div>

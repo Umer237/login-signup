@@ -81,6 +81,9 @@ margin-top: 10px;
 border-radius: 20px;
 background-color: rgb(1, 113, 179);
 }
+.Error-Text h4{
+  color: red;
+}
 
 /*-------Sign Up End-------*/
 

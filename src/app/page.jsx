@@ -63,7 +63,7 @@ const SignUp = () => {
                 <option>Creative</option>
                 <option>Admin</option>
               </select>
-
+              <h4 style={{color:'red',marginLeft:'10px'}}>Error</h4>
               <button onClick={saveData}>SUBMIT</button>
             </div>
           </div>
