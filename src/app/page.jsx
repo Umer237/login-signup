@@ -1,5 +1,7 @@
 'use client'
-import React, { useState } from 'react'
+
+import React, { useState } from 'react';
+import bcrypt from 'bcryptjs'; 
 
 const SignUp = () => {
 
@@ -39,9 +41,11 @@ const SignUp = () => {
       //  loop ends here
 
       if (status == true) {
+        
+        const hashedPassword = await bcrypt.hash(Password,10);
         let data = await fetch("http://localhost:3000/api/projects", {
           method: "POST",
-          body: JSON.stringify({ Email, Password, Department })
+          body: JSON.stringify({ Email, Password: hashedPassword, Department })
         });
 
         setMessage("you are registered successfully")

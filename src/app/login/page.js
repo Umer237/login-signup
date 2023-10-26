@@ -1,8 +1,8 @@
 'use client'
-
 import React, { useState } from 'react'
 
 const page = () => {
+
 
   var [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
@@ -19,7 +19,8 @@ const page = () => {
         jsondata.map((items) => {
           if (Email == items.Email && Password == items.Password) {
             if ("Admin" == items.Department) {
-              window.location.href = ("http://localhost:3000/aDashboard");
+              window.location.href = ("http://localhost:3000/aDashboard")
+
             }
             else if ("Creative" == items.Department) {
               window.location.href = ("http://localhost:3000/cDashboard");
