@@ -4,9 +4,9 @@ import React, { useState } from 'react'
 
 const page = () => {
 
-  const [Email, setEmail] = useState("");
+  var [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
-  const [Department, setDepartment] = useState("");
+  const [Message, setMessage] = useState("");
 
   // this function will work on onclick
 
@@ -17,25 +17,29 @@ const page = () => {
     if (Email != "" && Password != "") {
       try {
         jsondata.map((items) => {
-          if (Email==items.Email && Password==items.Password) {
-            if ("Admin"==items.Department) {
+          if (Email == items.Email && Password == items.Password) {
+            if ("Admin" == items.Department) {
               window.location.href = ("http://localhost:3000/aDashboard");
             }
-            else if ("Creative"==items.Department) {
+            else if ("Creative" == items.Department) {
               window.location.href = ("http://localhost:3000/cDashboard");
             }
-
           }
-        })
+          else if(Email!=items.Email){
+            setMessage("Email or Password is Incorrect");
+          }
+        
+        })  
+        // loop ends here
 
       }
       catch (error) {
-        console.log(error);
+        setMessage(error);
       }
     }
     else {
 
-      alert("Both fields are required")
+      setMessage("Both fields are required");
     }
 
 
@@ -55,7 +59,8 @@ const page = () => {
 
             <input type='email' value={Email} onChange={(e) => { setEmail(e.target.value) }} placeholder='Enter your Email' />
             <input placeholder='Enter your Password' value={Password} onChange={(e) => { setPassword(e.target.value) }} type='password'></input>
-<h4 style={{color:'red',marginLeft:'10px'}}>Error</h4>
+
+            <h4 style={{ color: 'red', marginLeft: '10px' }}>{Message}</h4>
             <button onClick={Success}>Login Now</button>
           </div>
         </div>
