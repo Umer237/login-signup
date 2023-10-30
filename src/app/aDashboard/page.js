@@ -1,13 +1,19 @@
-import Cookies from "js-cookie"
-
+'use client'
+import { deleteCookie,  } from "cookies-next"
 
 export default function Adashboard(){
+
+    const setCooky=()=>{
+        deleteCookie('loggedin', 'false');
+
+        window.location.href="/login"
+       }
 
 return(
 
     <main > 
         <h1>Welcome to Admin Dashboard</h1>
-        <button onClick={Cookies.remove("login")} style={{alignContent:"center", width:500}}><a href="http://localhost:3000/login">Logout</a></button>
+        <button onClick={setCooky} style={{alignContent:"center", width:500}}>Logout</button>
     
     </main>
 )

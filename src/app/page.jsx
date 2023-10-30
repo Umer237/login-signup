@@ -50,6 +50,7 @@ const SignUp = () => {
 
         setMessage("you are registered successfully")
         setTimeout(() => { window.location.href = ("/login"); }, 2000);
+        
       }
     }
 

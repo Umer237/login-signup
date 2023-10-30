@@ -1,5 +1,7 @@
 'use client'
 import React, { useState } from 'react'
+import { setCookie } from 'cookies-next';
+
 
 const page = () => {
 
@@ -19,15 +21,24 @@ const page = () => {
         jsondata.map((items) => {
           if (Email == items.Email && Password == items.Password) {
             if ("Admin" == items.Department) {
-              window.location.href = ("http://localhost:3000/aDashboard")
+
+              setCookie('loggedin', 'true');
+              window.location.href = ("http://localhost:3000/aDashboard");
 
             }
             else if ("Creative" == items.Department) {
+
+              setCookie('loggedin', 'true');
               window.location.href = ("http://localhost:3000/cDashboard");
             }
+           
           }
           else if(Email!=items.Email){
-            setMessage("Email or Password is Incorrect");
+
+            setTimeout(() => {
+              setMessage("Email or Password is Incorrect");
+            }, 1000);
+
           }
         
         })  
