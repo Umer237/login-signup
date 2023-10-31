@@ -22,13 +22,13 @@ const page = () => {
           if (Email == items.Email && Password == items.Password) {
             if ("Admin" == items.Department) {
 
-              setCookie('loggedin', 'true');
+              setCookie('Adminloggedin');
               window.location.href = ("http://localhost:3000/aDashboard");
 
             }
             else if ("Creative" == items.Department) {
 
-              setCookie('loggedin', 'true');
+              setCookie('Creativeloggedin');
               window.location.href = ("http://localhost:3000/cDashboard");
             }
            

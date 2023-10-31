@@ -4,7 +4,7 @@ import { deleteCookie,  } from "cookies-next"
 export default function Adashboard(){
 
     const setCooky=()=>{
-        deleteCookie('loggedin', 'false');
+        deleteCookie('Adminloggedin');
 
         window.location.href="/login"
        }

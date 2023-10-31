@@ -4,7 +4,7 @@ import { deleteCookie } from "cookies-next";
 export default function Cdashboard(){
 
     const setCooky=()=>{
-        deleteCookie('loggedin', 'false');
+        deleteCookie('Creativeloggedin');
 
         window.location.href="/login"
        }
