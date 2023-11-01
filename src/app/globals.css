@@ -223,13 +223,19 @@ margin-left: 5px;
   background-color: rgb(37, 122, 201);
   color: white;
 }
-.Appointment-Full-Div h3{
+.Appointment-Full-Div .Red-Text{
   font-size: 18px;
   font-weight: 400;
   color: red;
   margin-left: 5px;
   }
-/*========== Appointment ===============*/
+  .Appointment-Full-Div .Green-Text{
+    font-size: 18px;
+    font-weight: 400;
+    color: green;
+    margin-left: 5px;
+    }
+  /*========== Appointment ===============*/
 
 
 

@@ -94,8 +94,8 @@ const minDate = new Date();
   <option>Teeth Broken</option>
 </select>
 <textarea placeholder='Message' value={Message} onChange={(e)=>{setMessage(e.target.value)}}></textarea>
-<h3>{ErrorMessage}</h3>
-
+<h3 className='Red-Text'>{ErrorMessage}</h3>
+<h3 className='Green-Text'>Right</h3>
 <button className='Submit-btn' onClick={onSubmit}>SUBMIT</button>
     </div>
     </div>
