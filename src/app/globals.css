@@ -200,7 +200,7 @@ outline: none;
   height: 30px;
   padding: 3px;
 }
-.Appointment-Inputs button{
+.Appointment-Inputs .Submit-btn{
   border: white 1px solid;
 margin-top: 5px;
 width: 150px;
