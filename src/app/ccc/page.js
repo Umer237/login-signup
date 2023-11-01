@@ -10,7 +10,7 @@ import 'react-time-picker/dist/TimePicker.css'; // Import the styles for the tim
 
 function CalendarPage() {
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [selectedTime, setSelectedTime] = useState('12:00');
+  const [selectedTime, setSelectedTime] = useState('00:00');
 
   const handleDateChange = (date) => {
     setSelectedDate(date);

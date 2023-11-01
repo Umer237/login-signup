@@ -29,6 +29,7 @@
     "react-datetime-picker": "^5.5.3",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
-    "react-time-picker": "^6.5.2"
+    "react-time-picker": "^6.5.2",
+    "time-picker": "^1.0.0"
   }
 }
