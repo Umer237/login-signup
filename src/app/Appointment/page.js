@@ -1,13 +1,8 @@
 'use client'
+import { NextResponse } from 'next/server';
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
- 
-
-
-
-
-
 
 const Calendar = () => {
 
@@ -30,7 +25,7 @@ const Calendar = () => {
       method: 'POST',
       body: JSON.stringify({FirstName, LastName, ContactNumber, Email, Procedure, AppointDate, Time, Doctor, Message})
     });
-  
+    setTimeout(() => { window.location.href = ("/Appointment"); }, 500);
   
   }
 
