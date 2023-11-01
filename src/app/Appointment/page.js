@@ -83,9 +83,8 @@ const minDate = new Date();
 </select>
 <textarea placeholder='Message' value={Message} onChange={(e)=>{setMessage(e.target.value)}}></textarea>
 
-
+<button>SUBMIT</button>
     </div>
-
     </div>
     </>
 

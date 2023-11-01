@@ -200,6 +200,18 @@ outline: none;
   height: 30px;
   padding: 3px;
 }
+.Appointment-Inputs button{
+  border: white 1px solid;
+margin-top: 5px;
+width: 150px;
+cursor: pointer;
+color: white;
+outline: none;
+  background-color: rgb(44, 138, 226) ;
+  margin-left: 5px;
+  height: 40px;
+  padding: 3px;
+}
 .Appointment-Full-Div h4{
 font-size: 18px;
 font-weight: 400;
