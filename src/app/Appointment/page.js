@@ -1,4 +1,3 @@
-
 'use client'
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
@@ -8,7 +7,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import 'react-time-picker/dist/TimePicker.css'; 
 
 
-function Calendar  () {
+const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState('12:00');
 
@@ -21,7 +20,9 @@ function Calendar  () {
   };
 
   return (
-    <>    <div className='Appointment-Inputs'>
+    <>
+   <div>
+        <div className='Appointment-Inputs'>
 <h1>Dental Appointment</h1>
 <input type='text' placeholder='First Name'></input>
 <input type='text' placeholder='Last Name'></input>
@@ -52,7 +53,7 @@ function Calendar  () {
         />
       </div>
     </div>
-
+    </div>
     </>
 
   );
