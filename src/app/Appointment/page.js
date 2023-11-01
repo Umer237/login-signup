@@ -24,7 +24,7 @@ const Calendar = () => {
   
     if(FirstName==""|| LastName==""|| ContactNumber==""||Email==""||Procedure==""|| AppointDate==""|| Time==""|| Doctor==
     ""|| Message==""){
-      setErrorMessage("Firstname is empty");
+      setErrorMessage("All Fields are Required");
     }
     else{
       const data = await fetch("http://localhost:3000/api/appointRoute",{
