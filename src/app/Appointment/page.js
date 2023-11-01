@@ -13,6 +13,17 @@ const [Doctor , setDoctor]= useState("");
 const [Message , setMessage]= useState("");
 
 
+ async function onSubmit()
+{
+
+  const data = await fetch("http://localhost:3000/api/appointRoute",{
+    method: 'POST',
+    body: JSON.stringify({FirstName, LastName, ContactNumber, Email, Procedure, Time, selectedDate, Doctor, Message})
+  });
+  
+
+}
+
 
 const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
