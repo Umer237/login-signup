@@ -15,9 +15,9 @@ const page = () => {
     }
 
 
-    useEffect(() => { fetching() }, []);
+    useEffect(() => { fetching(); }, []);
 
-
+console.log(data)
     return (
 
         <div>
@@ -43,9 +43,10 @@ const page = () => {
 
                 <tbody>{
 
-                    data.map((item) => {
+                    data.map((item) => (
 
-                        <tr>
+                        <tr key={item._id}>
+
                             <td>{item.FirstName}</td>
                             <td>{item.LastName}</td>
                             <td>{item.ContactNumber}</td>
@@ -57,7 +58,7 @@ const page = () => {
                             <td>{item.Message}</td>
 
                         </tr>
-                    })
+                    ))
 
                 }</tbody>
             </table>
