@@ -3,6 +3,15 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
  
+const [FirstName , setFirstName]= useState("");
+const [LastName , setLastName]= useState("");
+const [ContactNumber , setContactNumber]= useState("");
+const [Email , setEmail]= useState("");
+const [Procedure , setProcedure]= useState("");
+const [Time , setTime]= useState("");
+const [Doctor , setDoctor]= useState("");
+const [Message , setMessage]= useState("");
+
 
 
 const Calendar = () => {
@@ -19,10 +28,10 @@ const minDate = new Date();
    <div className='Appointment-Full-Div'>
         <div className='Appointment-Inputs'>
 <h1>Dental Appointment</h1>
-<input type='text' placeholder='First Name'></input>
-<input type='text' placeholder='Last Name'></input>
-<input type='text' placeholder='Contact Number'></input>
-<input type='text' placeholder='Email'></input>
+<input type='text' placeholder='First Name' value={FirstName} onChange={(e)=>{setFirstName(e.target.value)}}></input>
+<input type='text' placeholder='Last Name' value={LastName} onChange={(e)=>{setLastName(e.target.value)}}></input>
+<input type='text' placeholder='Contact Number' value={ContactNumber} onChange={(e)=>{setContactNumber(e.target.value)}}></input>
+<input type='text' placeholder='Email' value={Email} onChange={(e)=>{setEmail(e.target.value)}}></input>
 <div>
       <div>
         <h4>Select Your Date</h4>
@@ -34,7 +43,7 @@ const minDate = new Date();
         />
       </div>
     </div>
-    <select>
+    <select value={Time} onChange={(e)=>{setTime(e.target.value)}}>
   <option>Select Your Time</option>
   <option>1:00pm</option>
   <option>1:30pm</option>
@@ -49,17 +58,19 @@ const minDate = new Date();
   <option>6:00pm</option>
   <option>6:30pm</option>
 </select>
-<select>
+
+<select value={Doctor} onChange={(e)=>{setDoctor(e.target.value)}}>
   <option>Select Your Doctor</option>
   <option>Doctor01</option>
   <option>Doctor02</option>
 </select>
-<select>
+
+<select value={Procedure}  onChange={(e)=>{setProcedure(e.target.value)}}>
   <option>Progress</option>
   <option>Filling</option>
   <option>Teeth Broken</option>
 </select>
-<textarea placeholder='Message'></textarea>
+<textarea placeholder='Message' value={Message} onChange={(e)=>{setMessage(e.target.value)}}></textarea>
 
 <button>SUBMIT</button>
     </div>
