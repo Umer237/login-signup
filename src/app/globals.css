@@ -159,111 +159,41 @@ margin-top: 10px;
 border-radius: 20px;
 background-color: rgb(1, 113, 179);
 }
-.Appointment-BG h2{
-  margin-left: 100px;
-}
-.Appointment-BG{
-  background-color: rgb(199, 199, 199);
-}
-.Appointment-Input{
-  margin-top: 80px;
-  margin-left: 80px;
-width: 500px;
-padding: 10px;
-}
-.Appointment-Input input{
-width: 500px;
-background-color: rgb(233, 233, 233);
-height:45px;
-outline: none;
-margin-top: 10px;
-border: none;
 
-padding: 10px;
-}
-.Appointment-Input textarea{
-  width: 500px;
-outline: none;
-  height:200px;
-  border: none;
-  margin-top: 10px;
-  background-color: rgb(233, 233, 233) ;
-  padding: 10px;
-  }
-.calendar{
-  width: 380px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow:  0 0 10px rgba(0, 0, 0,0.3);
-}
-
-.header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-.header button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 50%;
-  background: #fff;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
-}
-
-.days{
-  display: grid;
-  grid-template-columns: repeat(7,1fr);
-}
-.day{
-  text-align: center;
-  padding: 5px;
-  color: #999fa6;
-  font-weight: 500;
-}
-.dates{
-  display: grid;
-  grid-template-columns: repeat(7,1fr);
-}
-.date{
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 10px;
-margin: auto;
-cursor: pointer;
-font-weight: 600;
-border-radius: 50%;
-width: 40px;
-height: 40px;
-transition: 0.2s;
-}
-.date:hover,
-.date.active{
-  background: #ff5869;
-  color: #fff;
-}
-.date.inactive{
-  color: #d2d2d2;
-}
-.date.inactive:hover{
-  color: #fff;
-}
-.monthYear{
-  text-align: center;
-  font-weight: 600;
-  width: 150px;
-}
 /*-------Log In End-------*/
+
+/*========== Appointment ===============*/
+
+.Appointment-Inputs{
+width: 500px;
+}
+.Appointment-Inputs input{
+  border: rgb(190, 190, 190) 1px solid;
+margin-top: 10px;
+  width: 200px;
+  background-color: rgb(250, 250, 250) ;
+  margin-left: 5px;
+  padding: 3px;
+}
+.Appointment-Inputs textarea{
+  border: rgb(190, 190, 190) 1px solid;
+margin-top: 10px;
+  width: 405px;
+  background-color: rgb(250, 250, 250) ;
+  margin-left: 5px;
+  height: 120px;
+  padding: 3px;
+}
+.Appointment-Inputs select{
+  border: rgb(190, 190, 190) 1px solid;
+margin-top: 10px;
+  width: 405px;
+  background-color: rgb(250, 250, 250) ;
+  margin-left: 5px;
+  height: 30px;
+  padding: 3px;
+}
+/*========== Appointment ===============*/
+
 
 
