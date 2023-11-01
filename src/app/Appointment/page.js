@@ -20,7 +20,7 @@ const Calendar = () => {
   const [Time , setTime]= useState("");
   const [Doctor , setDoctor]= useState("");
   const [Message , setMessage]= useState("");
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [Date, setSelectedDate] = useState(new Date());
 
 
   async function onSubmit()
@@ -28,7 +28,7 @@ const Calendar = () => {
   
     const data = await fetch("http://localhost:3000/api/appointRoute",{
       method: 'POST',
-      body: JSON.stringify({FirstName, LastName, ContactNumber, Email, Procedure, selectedDate, Time, Doctor, Message})
+      body: JSON.stringify({FirstName, LastName, ContactNumber, Email, Procedure, Date, Time, Doctor, Message})
     });
   
   
@@ -55,7 +55,7 @@ const minDate = new Date();
       <div>
         <h4>Select Your Date</h4>
         <DatePicker
-          selected={selectedDate}
+          selected={Date}
           onChange={handleDateChange}
           minDate={minDate}
           dateFormat="MMMM d, yyyy"

@@ -6,7 +6,7 @@ const AppModel = new mongoose.Schema({
     ContactNumber: String,
     Email: String,
     Procedure: String,
-    selectedDate: String,
+    Date: String,
     Time: String,
     Doctor: String,
     Message: String,
