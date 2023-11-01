@@ -3,30 +3,38 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
  
-const [FirstName , setFirstName]= useState("");
-const [LastName , setLastName]= useState("");
-const [ContactNumber , setContactNumber]= useState("");
-const [Email , setEmail]= useState("");
-const [Procedure , setProcedure]= useState("");
-const [Time , setTime]= useState("");
-const [Doctor , setDoctor]= useState("");
-const [Message , setMessage]= useState("");
 
 
- async function onSubmit()
-{
 
-  const data = await fetch("http://localhost:3000/api/appointRoute",{
-    method: 'POST',
-    body: JSON.stringify({FirstName, LastName, ContactNumber, Email, Procedure, Time, selectedDate, Doctor, Message})
-  });
-  
 
-}
 
 
 const Calendar = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+
+
+  const [FirstName , setFirstName]= useState("");
+  const [LastName , setLastName]= useState("");
+  const [ContactNumber , setContactNumber]= useState("");
+  const [Email , setEmail]= useState("");
+  const [Procedure , setProcedure]= useState("");
+  const [Time , setTime]= useState("");
+  const [Doctor , setDoctor]= useState("");
+  const [Message , setMessage]= useState("");
+  const [AppointDate, setSelectedDate] = useState(new Date());
+
+
+  async function onSubmit()
+  {
+  
+    const data = await fetch("http://localhost:3000/api/appointRoute",{
+      method: 'POST',
+      body: JSON.stringify({FirstName, LastName, ContactNumber, Email, Procedure, AppointDate, Time, Doctor, Message})
+    });
+  
+  
+  }
+
+
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -34,12 +42,13 @@ const Calendar = () => {
 
 const minDate = new Date();
 
+
   return (
     <>
    <div className='Appointment-Full-Div'>
         <div className='Appointment-Inputs'>
 <h1>Dental Appointment</h1>
-<input type='text' placeholder='First Name' value={FirstName} onChange={(e)=>{setFirstName(e.target.value)}}></input>
+<input type='text' placeholder='First Name' value={FirstName}  onChange={(e)=>{setFirstName(e.target.value)}}></input>
 <input type='text' placeholder='Last Name' value={LastName} onChange={(e)=>{setLastName(e.target.value)}}></input>
 <input type='text' placeholder='Contact Number' value={ContactNumber} onChange={(e)=>{setContactNumber(e.target.value)}}></input>
 <input type='text' placeholder='Email' value={Email} onChange={(e)=>{setEmail(e.target.value)}}></input>
@@ -47,7 +56,7 @@ const minDate = new Date();
       <div>
         <h4>Select Your Date</h4>
         <DatePicker
-          selected={selectedDate}
+          selected={AppointDate}
           onChange={handleDateChange}
           minDate={minDate}
           dateFormat="MMMM d, yyyy"
@@ -82,7 +91,7 @@ const minDate = new Date();
   <option>Teeth Broken</option>
 </select>
 <textarea placeholder='Message' value={Message} onChange={(e)=>{setMessage(e.target.value)}}></textarea>
-<h3>Password Incorret</h3>
+
 <button>SUBMIT</button>
     </div>
     </div>
