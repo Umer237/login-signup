@@ -17,6 +17,8 @@ const Calendar = () => {
   const [Message , setMessage]= useState("");
   const [AppointDate, setSelectedDate] = useState(new Date());
   const [ErrorMessage, setErrorMessage]=useState("");
+  const [SuccessMessage, setSuccessMessage]=useState("");
+
 
 
   async function onSubmit()
@@ -31,6 +33,7 @@ const Calendar = () => {
         method: 'POST',
         body: JSON.stringify({FirstName, LastName, ContactNumber, Email, Procedure, AppointDate, Time, Doctor, Message})
       });
+      setSuccessMessage("You have Booked Appointment Successfully");
       setTimeout(() => { window.location.href = ("/Appointment"); }, 500);
     }
 
@@ -95,7 +98,7 @@ const minDate = new Date();
 </select>
 <textarea placeholder='Message' value={Message} onChange={(e)=>{setMessage(e.target.value)}}></textarea>
 <h3 className='Red-Text'>{ErrorMessage}</h3>
-<h3 className='Green-Text'>Right</h3>
+<h3 className='Green-Text'>{SuccessMessage}</h3>
 <button className='Submit-btn' onClick={onSubmit}>SUBMIT</button>
     </div>
     </div>
