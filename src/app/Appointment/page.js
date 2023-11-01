@@ -1,7 +1,24 @@
 
+'use client'
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import TimePicker from 'react-time-picker';
+
+import 'react-datepicker/dist/react-datepicker.css';
+import 'react-time-picker/dist/TimePicker.css'; 
 
 
-const Calendar = () => {
+function Calendar  () {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedTime, setSelectedTime] = useState('12:00');
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+
+  const handleTimeChange = (time) => {
+    setSelectedTime(time);
+  };
 
   return (
     <>    <div className='Appointment-Inputs'>
@@ -16,20 +33,24 @@ const Calendar = () => {
   <option>Doctor01</option>
   <option>Doctor02</option>
 </select>
-<select>
-  <option>Time</option>
-  <option>1:00pm</option>
-  <option>1:30pm</option>
-  <option>2:00pm</option>
-  <option>2:30pm</option>
-  <option>3:00pm</option>
-  <option>3:30pm</option>
-  <option>4:00pm</option>
-  <option>4:30pm</option>
-  <option>5:00pm</option>
-  <option>5:30pm</option>
-  <option>6:00pm</option>
-</select>
+    </div>
+    <div>
+      <h1>Calendar and Time Picker</h1>
+      <div>
+        <h2>Select a Date:</h2>
+        <DatePicker
+          selected={selectedDate}
+          onChange={handleDateChange}
+          dateFormat="MMMM d, yyyy"
+        />
+      </div>
+      <div>
+        <h2>Select a Time:</h2>
+        <TimePicker
+          value={selectedTime}
+          onChange={handleTimeChange}
+        />
+      </div>
     </div>
 
     </>
