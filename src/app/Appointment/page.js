@@ -61,9 +61,8 @@ const minDate = new Date();
 </select>
 <textarea placeholder='Message'></textarea>
 
-
+<button>SUBMIT</button>
     </div>
-
     </div>
     </>
 
