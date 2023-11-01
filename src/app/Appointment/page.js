@@ -16,16 +16,24 @@ const Calendar = () => {
   const [Doctor , setDoctor]= useState("");
   const [Message , setMessage]= useState("");
   const [AppointDate, setSelectedDate] = useState(new Date());
+  const [ErrorMessage, setErrorMessage]=useState("");
 
 
   async function onSubmit()
   {
   
-    const data = await fetch("http://localhost:3000/api/appointRoute",{
-      method: 'POST',
-      body: JSON.stringify({FirstName, LastName, ContactNumber, Email, Procedure, AppointDate, Time, Doctor, Message})
-    });
-    setTimeout(() => { window.location.href = ("/Appointment"); }, 500);
+    if(FirstName==""|| LastName==""|| ContactNumber==""||Email==""||Procedure==""|| AppointDate==""|| Time==""|| Doctor==
+    ""|| Message==""){
+      setErrorMessage("Firstname is empty");
+    }
+    else{
+      const data = await fetch("http://localhost:3000/api/appointRoute",{
+        method: 'POST',
+        body: JSON.stringify({FirstName, LastName, ContactNumber, Email, Procedure, AppointDate, Time, Doctor, Message})
+      });
+      setTimeout(() => { window.location.href = ("/Appointment"); }, 500);
+    }
+
   
   }
 
@@ -86,7 +94,7 @@ const minDate = new Date();
   <option>Teeth Broken</option>
 </select>
 <textarea placeholder='Message' value={Message} onChange={(e)=>{setMessage(e.target.value)}}></textarea>
-<h3 value></h3>
+<h3>{ErrorMessage}</h3>
 
 <button className='Submit-btn' onClick={onSubmit}>SUBMIT</button>
     </div>
