@@ -42,6 +42,7 @@ const Calendar = () => {
 
 const minDate = new Date();
 
+
   return (
     <>
    <div className='Appointment-Full-Div'>
