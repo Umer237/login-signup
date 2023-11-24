@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const page = () => {
@@ -17,7 +18,7 @@ const page = () => {
 
     useEffect(() => { fetching(); }, []);
 
-console.log(data)
+
     return (
 
         <div>
@@ -37,6 +38,7 @@ console.log(data)
                         <td>Time</td>
                         <td>Doctor</td>
                         <td>Message</td>
+                        <td>Action</td>
 
                     </tr>
                 </thead>
@@ -56,6 +58,7 @@ console.log(data)
                             <td>{item.Time}</td>
                             <td>{item.Doctor}</td>
                             <td>{item.Message}</td>
+                            <td><a href={"AppointmentTable/" + item._id}> Edit </a></td>
 
                         </tr>
                     ))
